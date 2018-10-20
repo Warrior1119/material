@@ -6,5 +6,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'ng5-material';
+  answer: any = '';
+  answerDisplay: any = '';
+  showSpinner: boolean = false;
+
+  showAnswer() {
+    this.showSpinner = true;
+
+    setTimeout(() => {
+      this.answerDisplay = this.answer;
+      this.showSpinner = false;
+    }, 2000);
+  }
 }
